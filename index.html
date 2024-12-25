@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unstoppable News</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="/"><h1>UNSTOPPABLE NEWS</h1></a>
+        
+
+        <p>Decentralized with the Sonic (formerly Fantom) Blockchain. Censored by <u><b>no one</b></u>.</p>
+
+        <p>
+            <button id="aboutButton">ABOUT</button>
+            <button id="connectButton">CONNECT</button>
+            <button id="writeButton">WRITE</button>
+            <button id="donateButton">DONATE</button>
+        </p>         
+    
+        <p id="status"></p>
+
+        <!-- <p><b>A coding mistake has messed up some of the permalinks. I apologize for the problem. This only affects the URLs, the articles are all safe.</b></p> -->
+
+        <!-- CAUTION to DEV as adjusting the amount of articles shown in the JS function changes the permalinks as interpreted/served from the server -->
+<!--     
+        <div style="display: flex; justify-content: center; gap: 0px;">
+            <div id="crypto-prices" style="font-size: 16px; text-align: center; margin: 10px;">
+                Loading prices...
+            </div>
+        </div> -->
+        
+
+        
+        <p>
+            <a href="https://discord.gg/5KVY2FPDaz" target="_blank"><button>Join Discord</button></a> 
+            <a href="https://x.com/intent/tweet?url=https://unstoppablenews.net&text=Check out Unstoppable News - Written by YOU and Censored by NO ONE using the security of the blockchain" target="_blank"><button>Share on X</button></a>
+            <a href="https://myfreevoice.net/" target="_blank"><button>FREE AI Voice</button></a> 
+        </p>    
+        
+        <p id="zulu-time">Loading...</p>
+
+
+
+        <!-- <div id="random-fact" style="margin-top: 10px; font-style: italic;"></div> -->    
+
+        <div id="news-container">
+            <div id="news-list"></div>
+        </div>
+
+        <p>Contract Address: <a id="contract-link" href="https://sonicscan.org/address/0x49c21c226c9a92b4390e4aa8c313466f427272cc#code" target="_blank">0x49c21c226c9a92b4390e4aa8c313466f427272cc</a></p>
+
+
+
+        <p>
+            <a href="https://discord.gg/5KVY2FPDaz" target="_blank"><button>Join Discord</button></a> 
+            <a href="https://x.com/intent/tweet?url=https://unstoppablenews.net&text=Check out Unstoppable News - Written by YOU and Censored by NO ONE using the security of the blockchain" target="_blank"><button>Share on X</button></a>
+            <a href="https://myfreevoice.net/" target="_blank"><button>FREE AI Voice</button></a> 
+        </p>
+
+
+    </div>  
+
+    <!-- About Popup -->
+    <div id="aboutPopup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close-btn">&times;</span>
+            <h2>About Unstoppable News</h2>
+            <p>Unstoppable News allows anyone to post an article to the Sonic blockchain. The only cost is the gas fee which is often less than $0.001 US. No company or government or individual, including myself (the creator), can censor or remove any of your articles. Even if the site goes down, all articles will remain accessible to the public via any Sonic blockchain explorer. Your articles are immutable and cannot be edited after published. Your article will be attributed to your wallet and readers will be able to donate a specified amount of SONIC to you after reading.<p><b>90% of these funds will be sent to the author and 10% will be sent to maintain the website.</b></p>
+            <button id="okButton">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingPopup" class="loading-modal" style="display:none;">
+        <div class="loading-modal-content">
+            <p><img src="images/elon.gif" width="10%" height="10%"></p>
+            <p id="loadingText">Please wait...</p>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Write Popup -->
+    <div id="writePopup" class="popup">
+        <div class="popup-content">
+            <span id="closeWritePopup" class="close-btn">&times;</span>
+            <h2>Submit New Article</h2>
+            <p><b>HTML tags are NOT yet supported</b></p>
+
+            <form id="writeForm">
+                <label for="header">Header:</label>
+                <input type="text" id="header" required><br>
+                
+                <label for="body">Body:</label>
+                <textarea id="body" required></textarea><br>
+                
+                <button type="submit">Submit Article</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+    <p>Written by <b>you</b>. Censored by <u><b>no one</b></u>.</p>
+
+    <p>If submitting an article here fails, please interact with the contract <a id="contract-link" href="https://sonicscan.org/address/0x49c21c226c9a92b4390e4aa8c313466f427272cc#code" target="_blank">here</a>.</p>
+
+    <p><i>Alpha 0.4.0.0</i></p>
+</body>
+</html>
